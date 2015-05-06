@@ -7,6 +7,9 @@ import math
 import sys
 
 
+sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
+
+
 def bar_chart(data, maxbarlen=30):
     """
     Prints a bar chart over the given data. The data is expected
@@ -30,6 +33,5 @@ def stdout(*args):
     """
     Writes the given arguments to stdout and immediately flushes.
     """
-    sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
     sys.stdout.write(' '.join(map(unicode, args)))
     sys.stdout.flush()
