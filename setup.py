@@ -10,6 +10,5 @@ setup(
     description="Personal collection of convenience functions.",
     long_description=open('README.md', 'rt').read(),
     author="Tobias Günther",
-    url="https://github.com/tobigue/tobitools",
-    include_package_data=True,
+    url="https://github.com/tobigue/tobitools"
 )
