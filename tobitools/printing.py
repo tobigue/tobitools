@@ -7,9 +7,6 @@ import math
 import sys
 
 
-sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
-
-
 def bar_chart(data, maxbarlen=30):
     """
     Prints a bar chart over the given data. The data is expected
@@ -27,6 +24,13 @@ def bar_chart(data, maxbarlen=30):
     for k, v in data:
         bar = int(math.ceil((v / float(maxvalue)) * maxbarlen)) * "█"
         print(("%" + str(maxkeylen) + "s %s %s") % (k, bar, v))
+
+
+def set_stdout():
+    """
+    Sets stdout encoding to the preferred encoding.
+    """
+    sys.stdout = codecs.getwriter(locale.getpreferredencoding())(sys.stdout)
 
 
 def stdout(*args):
