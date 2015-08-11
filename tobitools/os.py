@@ -14,6 +14,8 @@ def walk_files(*args, **kwargs):
     Keyword arguments:
     file_ending: only match files that end with the given ending
                  (case insensitive)
+    file_regex: only match files that have a positive `search` match
+                in the filename for the given compiled regex object.
     """
     file_ending = kwargs.get("file_ending")
     if file_ending:
