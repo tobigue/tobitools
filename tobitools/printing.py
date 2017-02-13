@@ -19,11 +19,11 @@ def bar_chart(data, maxbarlen=30):
     C ██████████████ 14000
     B ███ 3000
     """
-    maxkeylen = max([len(str(k)) for k, v in data])
+    maxkeylen = max([len(unicode(k)) for k, v in data])
     maxvalue = max([v for k, v in data])
     for k, v in data:
         bar = int(math.ceil((v / float(maxvalue)) * maxbarlen)) * "█"
-        print(("%" + str(maxkeylen) + "s %s %s") % (k, bar, v))
+        print(("%" + unicode(maxkeylen) + "s %s %s") % (k, bar, v))
 
 
 def set_stdout():
